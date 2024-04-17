@@ -12,7 +12,13 @@ url = "https://docs.google.com/spreadsheets/d/1lHI0ofOrxTorUrthTqJKafWbZgmPqf9Qd
 
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-data = conn.read(spreadsheet=url)
+# Disable caching for data retrieval
+@st.cache(allow_output_mutation=True)
+def fetch_data(url):
+    conn = st.connection("gsheets", type=GSheetsConnection)
+    return conn.read(spreadsheet=url)
+
+data = fetch_data(url)
 
 
 # Display filtering options using columns
