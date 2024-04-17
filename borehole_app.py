@@ -30,9 +30,9 @@ with st.expander("Filter Points", expanded=True):
         selected_value = st.text_input('Search Term')
 
 # Apply filters
-filtered_data = data
+#filtered_data = data
 if selected_column != 'All':
-     filtered_data = filtered_data[filtered_data[selected_column].str.contains(selected_value, case=False).fillna(False).astype(bool)]
+     data = data[data[selected_column].str.contains(selected_value, case=False).fillna(False).astype(bool)]
 
 #Display filtered DataFrame
 st.dataframe(filtered_data,use_container_width=True,hide_index=True)
