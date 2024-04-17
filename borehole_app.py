@@ -39,6 +39,7 @@ if selected_column != 'All':
 #Display filtered DataFrame
 st.dataframe(data,use_container_width=True,hide_index=True)
 
+st.download_button('On the dl', data)
 
 
 
