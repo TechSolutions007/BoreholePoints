@@ -35,7 +35,7 @@ if selected_column != 'All':
      data = data[data[selected_column].str.contains(selected_value, case=False).fillna(False).astype(bool)]
 
 #Display filtered DataFrame
-st.dataframe(filtered_data,use_container_width=True,hide_index=True)
+st.dataframe(data,use_container_width=True,hide_index=True)
 
 
 
