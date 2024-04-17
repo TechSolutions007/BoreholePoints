@@ -13,7 +13,7 @@ url = "https://docs.google.com/spreadsheets/d/1lHI0ofOrxTorUrthTqJKafWbZgmPqf9Qd
 conn = st.connection("gsheets", type=GSheetsConnection)
 
 # Disable caching for data retrieval
-@st.cache(allow_output_mutation=True)
+st.cache_data(ttl=1)
 def fetch_data(url):
     conn = st.connection("gsheets", type=GSheetsConnection)
     return conn.read(spreadsheet=url)
