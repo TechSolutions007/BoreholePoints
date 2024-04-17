@@ -23,7 +23,7 @@ selected_value = st.sidebar.text_input('Search Term')
 # Apply filters
 filtered_data = data.copy()
 if selected_column != 'All':
-     filtered_data = filtered_data[filtered_data[selected_column].str.contains(selected_value, case=False)]
+     filtered_data = filtered_data[filtered_data[selected_column].str.contains(selected_value, case=False).fillna(False).astype(bool)]
 
 # Display filtered DataFrame
 st.dataframe(filtered_data)
