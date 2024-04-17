@@ -39,9 +39,6 @@ if selected_column != 'All':
 #Display filtered DataFrame
 st.dataframe(data,use_container_width=True,hide_index=True)
 
-st.download_button('On the dl', data)
-
-
 
 st.subheader('The community are urged to please be mindful and courteous to those that are making water available to you')
 st.subheader('To add your name to the list to make water available to the community please contact Salim Tootla @ 083 662 8118')
