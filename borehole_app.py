@@ -18,6 +18,8 @@ def fetch_data(url):
     conn = st.connection("gsheets", type=GSheetsConnection)
     return conn.read(spreadsheet=url)
 
+fetch_data.clear()
+st.cache_data.clear()
 data = fetch_data(url)
 
 
