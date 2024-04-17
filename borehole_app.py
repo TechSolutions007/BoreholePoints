@@ -42,5 +42,5 @@ st.dataframe(data,use_container_width=True,hide_index=True)
 
 
 
-st.text('The community are urged to please be mindful\nand courteous to those\nthat are making\nwater available to you')
+st.subheader('The community are urged to please be mindful and courteous to those that are making water available to you')
 st.text('To add your name to the list to make water\navailable to the community\nplease contact\nSalim Tootla @ 083 662 8118')
