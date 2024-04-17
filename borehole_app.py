@@ -1,19 +1,17 @@
 import streamlit as st
 from streamlit_gsheets import GSheetsConnection
-import pandas as pd
-import numpy as np
-
-
 
 st.title('911 Kwa Dukuza | Borehole Points Stanger')
 
-
 url = "https://docs.google.com/spreadsheets/d/1lHI0ofOrxTorUrthTqJKafWbZgmPqf9QdeWyVotcbrQ/edit?usp=sharing"
 
-conn = st.connection("gsheets", type=GSheetsConnection)
+# Disable caching for data retrieval
+@st.cache(allow_output_mutation=True)
+def fetch_data(url):
+    conn = st.connection("gsheets", type=GSheetsConnection)
+    return conn.read(spreadsheet=url)
 
-data = conn.read(spreadsheet=url)
-
+data = fetch_data(url)
 
 # Filtering options
 st.sidebar.header('Filter Points')
@@ -27,7 +25,6 @@ if selected_column != 'All':
 
 # Display filtered DataFrame
 st.dataframe(filtered_data)
-
 
 st.text('The community are urged to please be mindful and courteous to those that are making water available to you')
 st.text('To add your name to the list to make water available to the community please contact Salim Tootla 083 662 8118')
