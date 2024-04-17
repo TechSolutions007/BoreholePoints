@@ -5,14 +5,6 @@ st.title('911 Kwa Dukuza | Borehole Points Stanger')
 
 url = "https://docs.google.com/spreadsheets/d/1lHI0ofOrxTorUrthTqJKafWbZgmPqf9QdeWyVotcbrQ/edit?usp=sharing"
 
-# Clear cache for @st.cache
-st.cache.clear()
-
-# Clear cache for @st.cache_data
-st.cache_data.clear()
-
-# Clear cache for @st.cache_resource
-st.cache_resource.clear()
 
 # Disable caching for data retrieval
 @st.cache(allow_output_mutation=True)
