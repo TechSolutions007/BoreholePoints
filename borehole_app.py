@@ -34,5 +34,5 @@ st.dataframe(filtered_data,use_container_width=True,hide_index=True)
 
 
 
-st.text('The community are urged to please be mindful and courteous to those that are making\nwater available to you')
-st.text('To add your name to the list to make water available to the community please contact\nSalim Tootla @ 083 662 8118')
+st.text('The community are urged to please be mindful\n and courteous to those\n that are making\nwater available to you')
+st.text('To add your name to the list to make water\n available to the community\n please contact\nSalim Tootla @ 083 662 8118')
